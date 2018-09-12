@@ -1,0 +1,25 @@
+{
+  "initial_data": [
+    {
+      "date": "2018-09-12",
+      "amount": 21000,
+      "id": "50a3197e-2858-43cc-9ee2-aabcc3ba24b7"
+    }
+  ],
+  "allocated_data": [
+    {
+      "initial_id": "50a3197e-2858-43cc-9ee2-aabcc3ba24b7",
+      "food": 7500,
+      "communal": 7500,
+      "transport": 3500,
+      "other": 2500,
+      "id": "8417cdb7-1eca-448e-992f-1276611d5d48"
+    }
+  ],
+  "initial_amount": [
+    {
+      "name": "InitialAmount",
+      "amount": 0
+    }
+  ]
+}

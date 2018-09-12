@@ -1,0 +1,12 @@
+{
+  "daily_waste_transport": [
+    {
+      "name": "DailyTransportWaste",
+      "transport_amount": 3500,
+      "daily_waste": 0,
+      "total_waste": 0,
+      "remainder": 3500,
+      "date": "2018-09-12T13:43:07.265Z"
+    }
+  ]
+}

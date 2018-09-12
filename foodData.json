@@ -1,0 +1,12 @@
+{
+  "daily_waste_food": [
+    {
+      "name": "DailyFoodWaste",
+      "food_amount": 7500,
+      "daily_waste": 0,
+      "total_waste": 0,
+      "remainder": 7500,
+      "date": "2018-09-12T13:43:07.251Z"
+    }
+  ]
+}

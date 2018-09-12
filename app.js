@@ -1,13 +1,17 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
-var initialData = require('./routes/initial_data');
+const initialData = require('./routes/initial_data');
+const foodData = require('./routes/food_data');
+const communalData = require('./routes/communal_data');
+const transportData = require('./routes/transport_data');
+const otherData = require('./routes/other_data');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -19,9 +23,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/initial-data', initialData);
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+})
 
-var frontDir = path.join(__dirname, '../', 'front-end/dist');
+app.use('/initial-data', initialData);
+app.use('/food-data', foodData);
+app.use('/communal-data', communalData);
+app.use('/transport-data', transportData);
+app.use('/other-data', otherData);
+
+const frontDir = path.join(__dirname, '../', 'front-end/dist');
 global.frontDir = frontDir;
 app.use(express.static(frontDir))
 
@@ -31,7 +47,7 @@ app.get('*', (req, res) => {
 });
 
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

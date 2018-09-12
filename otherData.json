@@ -1,0 +1,12 @@
+{
+  "daily_waste_other": [
+    {
+      "name": "DailyOtherWaste",
+      "other_amount": 2500,
+      "daily_waste": 0,
+      "total_waste": 0,
+      "remainder": 2500,
+      "date": "2018-09-12T13:43:52.410Z"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app, console.log('http://localhost:' + port));
+var server = http.createServer(app, console.log(`CORS-enabled. Web server listening on port ${port}`));
 
 /**
  * Listen on provided port, on all network interfaces.
